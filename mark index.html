@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ 
+</head>
+<style>
+	.container-fluid {
+		
+		width:400px;
+
+		border:2px solid black;
+
+	   margin-top: 40px;
+
+	}
+	.btn:hover{
+		color:black;
+
+	}
+
+</style>
+<body background="img/nature.jpg" style="width:100%;height:900px;">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 bg-primary">
+				<br>
+
+				<h2 style="text-align: center;">PERSON DATA SUBMIT</h2>
+				<br>
+				<div class="row">
+					<div class="col-md-12 col-md-12 col-sm-12 text-center">
+
+				<a href="mark details.html"><button type="button" class="btn btn-danger">show records
+				</button></a>
+			</div>
+		</div>
+				<br>
+			<b>NAME :</b><input type="text" class="form-control" id="vijay"required>
+			<br>
+			<b>REGNO :</b><input type="text" class="form-control" id="123"required>
+			<br>
+			<b>CLASS :</b><input type="text" class="form-control" id="10"required>
+			<br>
+			<b>TAMIL :</b><input type="number" class="form-control" id="tmark"required>
+			<br>
+			<b>ENGLISH :</b><input type="number" class="form-control" id="emark"required>
+			<br>
+			<b>MATHS:</b><input type="number" class="form-control" id="mmark"required>
+			<br>
+			<b>SCIENCE :</b><input type="number" class="form-control" id="smark"required>
+			<br>
+			<b>SOCIALSCIENCE:</b><input type="number" class="form-control" id="social"required>
+			<br>
+			<div class="row">
+					<div class="col-md-12 col-md-12 col-sm-12 text-center">
+				<button type="button" onclick="myFunction()" class="btn btn-danger">SUBMIT
+				</button>
+			</div>
+	        </div>
+           </div>
+       </div>
+   </div>
+
+<script>
+	var user=[]
+   function myFunction() {
+    var  total="";
+     var NAME=document.getElementById('vijay').value;
+      var REGNO=document.getElementById('123').value;
+       var CLASS=document.getElementById('10').value;
+        var TAMIL=parseInt(document.getElementById('tmark').value);
+         var ENGLISH=parseInt(document.getElementById('emark').value);
+          var MATHS=parseInt(document.getElementById('mmark').value);
+           var SCIENCE=parseInt(document.getElementById('smark').value);
+            var SOCIALSCIENCE=parseInt(document.getElementById('social').value);
+
+              if(TAMIL>=35 && ENGLISH>=35 && MATHS>=35 && SCIENCE>=35 && SOCIALSCIENCE>=35) 
+            {
+            	console.log("pass")
+            	var result="pass";
+            	console.log(result)
+            }
+            else {
+            	console.log("fail")
+            	var result="fail";
+            	console.log(result)
+            }
+               total=TAMIL+ENGLISH+MATHS+SCIENCE+SOCIALSCIENCE;
+            
+            console.log(total)
+
+            var data ={
+            	NAME:NAME,
+            	REGNO:REGNO,
+            	CLASS:CLASS,
+            	TAMIL:TAMIL,
+            	ENGLISH:ENGLISH,
+            	MATHS:MATHS,
+            	SCIENCE:SCIENCE,
+            	SOCIALSCIENCE:SOCIALSCIENCE,
+            	total:total,
+            	result:result,
+            	
+            }
+           
+
+         user.push(data)
+      localStorage.setItem('user2',JSON.stringify(user));
+        console.log(user)
+     
+  
+
+
+
+   }
+ 
+
+
+</script>
+</body>
+</html>
